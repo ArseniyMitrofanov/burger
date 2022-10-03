@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5529908E0A9F185ACA4ACA6 /* Pods_Burger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D022C8211DD2E87E9F2EF44 /* Pods_Burger.framework */; };
 		EAFC064028DB4F9100BDD27C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFC063F28DB4F9100BDD27C /* AppDelegate.swift */; };
 		EAFC064228DB4F9100BDD27C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFC064128DB4F9100BDD27C /* SceneDelegate.swift */; };
 		EAFC064428DB4F9100BDD27C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFC064328DB4F9100BDD27C /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		146567D9467A234CC7D1D8A8 /* Pods-Burger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Burger.release.xcconfig"; path = "Target Support Files/Pods-Burger/Pods-Burger.release.xcconfig"; sourceTree = "<group>"; };
+		2D022C8211DD2E87E9F2EF44 /* Pods_Burger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Burger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		609A12538994E4B1F7D24860 /* Pods-Burger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Burger.debug.xcconfig"; path = "Target Support Files/Pods-Burger/Pods-Burger.debug.xcconfig"; sourceTree = "<group>"; };
 		EAFC063C28DB4F9100BDD27C /* Burger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Burger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFC063F28DB4F9100BDD27C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAFC064128DB4F9100BDD27C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5529908E0A9F185ACA4ACA6 /* Pods_Burger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		224381DFA7EBE89D15FFD5E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D022C8211DD2E87E9F2EF44 /* Pods_Burger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CC1AA4213DD7C5909B5835D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				609A12538994E4B1F7D24860 /* Pods-Burger.debug.xcconfig */,
+				146567D9467A234CC7D1D8A8 /* Pods-Burger.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EAFC063328DB4F9100BDD27C = {
 			isa = PBXGroup;
 			children = (
 				EAFC063E28DB4F9100BDD27C /* Burger */,
 				EAFC063D28DB4F9100BDD27C /* Products */,
+				8CC1AA4213DD7C5909B5835D /* Pods */,
+				224381DFA7EBE89D15FFD5E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +98,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAFC065028DB4F9300BDD27C /* Build configuration list for PBXNativeTarget "Burger" */;
 			buildPhases = (
+				EA5E569828EA36C400FA348A /* ShellScript */,
+				BFA475496511295BE8ADA18F /* [CP] Check Pods Manifest.lock */,
 				EAFC063828DB4F9100BDD27C /* Sources */,
 				EAFC063928DB4F9100BDD27C /* Frameworks */,
 				EAFC063A28DB4F9100BDD27C /* Resources */,
@@ -132,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BFA475496511295BE8ADA18F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Burger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA5E569828EA36C400FA348A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EAFC063828DB4F9100BDD27C /* Sources */ = {
@@ -282,6 +350,7 @@
 		};
 		EAFC065128DB4F9300BDD27C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 609A12538994E4B1F7D24860 /* Pods-Burger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +378,7 @@
 		};
 		EAFC065228DB4F9300BDD27C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 146567D9467A234CC7D1D8A8 /* Pods-Burger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

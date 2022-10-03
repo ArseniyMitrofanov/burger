@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
     @IBOutlet weak var blur: UIVisualEffectView!
     @IBOutlet weak var burger: UIButton!
     let myView = UIStackView()
@@ -16,21 +15,17 @@ class ViewController: UIViewController {
     var topConstraint: NSLayoutConstraint? = nil
     var hightConsraint: NSLayoutConstraint? = nil
     var widthConstraint: NSLayoutConstraint? = nil
-    
     let hehehe = UILabel()
-    let si = UILabel()
-    let cr = UIImageView(image: UIImage(named: "siu"))
-   
-    
+    let siuuu = UILabel()
+    let cr7 = UIImageView(image: UIImage(named: "siu"))
     override func viewDidLoad() {
         super.viewDidLoad()
         myView.axis = .vertical
         hehehe.text = "hehehe..."
-        si.text = "SIUUUUUUUUUUU"
+        siuuu.text = "SIUUUUUUUUUUU"
         myView.addArrangedSubview(hehehe)
-        myView.addArrangedSubview(si)
-        myView.addArrangedSubview(cr)
-        
+        myView.addArrangedSubview(siuuu)
+        myView.addArrangedSubview(cr7)
         blur.isHidden = true
         myView.backgroundColor = .lightGray
         myView.translatesAutoresizingMaskIntoConstraints = false
@@ -43,17 +38,14 @@ class ViewController: UIViewController {
             leftConstraint!, topConstraint!, hightConsraint!, widthConstraint!
         ])
     }
-    
-    
     @IBAction func burgerTapped(_ sender: Any) {
         blur.isHidden = false
         self.view.bringSubviewToFront(myView)
         if self.leftConstraint != nil {
-            UIView.animate(withDuration: 0.5){
+            UIView.animate(withDuration: 0.5) {
                 self.leftConstraint!.constant = 0
                 self.view.layoutIfNeeded()
             }
         }
     }
 }
-
